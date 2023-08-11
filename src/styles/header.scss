@@ -1,0 +1,69 @@
+.header {
+  text-align: center;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 50rem;
+  }
+  h1 {
+    flex: 0 0 100%;
+    font-weight: 500;
+    font-size: 3.5rem;
+    line-height: 120%;
+    margin-top: 5rem;
+    @media (max-width: 620px) {
+      font-size: 2rem;
+    }
+  }
+  .select__group {
+    flex: 0 0 50%;
+    width: 50%;
+    margin-bottom: 3rem;
+    @media (max-width: 768px) {
+      flex: 0 0 100%;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.search-form {
+  display: flex;
+  margin: 1rem auto 2rem auto;
+  flex: 0 0 100%;
+  width: 100%;
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    border-left: 1px solid $grey;
+    border-right: 0;
+  }
+  button {
+    border-top: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    border-right: 1px solid $grey;
+    border-left: 0;
+    background-color: transparent;
+    padding-right: 0.75rem;
+    cursor: pointer;
+  }
+}
+.select__group {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  label {
+    margin-right: 1rem;
+    white-space: nowrap;
+  }
+  select {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}

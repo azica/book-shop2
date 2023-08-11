@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Header from "./components/Header";
+import BookList from "./components/BookList";
+import { useAppDispatch, useAppSelector } from "./store/hooks";
+import { fetchBooks, fetchMoreBooks } from "./store/books/bookActions";
+import { fetchCategories } from "./store/categories/categoriesActions";
 
 function App() {
+  const dispatch = useAppDispatch();
+  const [startIndex, setStartIndex] = useState(0);
+  const { sort, category } = useAppSelector((state) => state.books);
+
+  useEffect(() => {
+    dispatch(fetchCategories());
+    dispatch(fetchBooks(sort));
+  }, [sort]);
+  useEffect(() => {
+    if (startIndex >= 10) {
+      dispatch(fetchMoreBooks({ startIndex, category }));
+    }
+  }, [startIndex, category]);
+  const ClickHandler = () => {
+    setStartIndex((prev) => (prev += 10));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <BookList />
+      <div className="load-button__container">
+        <button className="load__button" onClick={ClickHandler}>
+          Load More
+        </button>
+      </div>
     </div>
   );
 }

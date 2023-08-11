@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Nunito+Sans:opsz,wght@6..12,300;6..12,500;6..12,600&display=swap");
+
+$main-font: "Montserrat", sans-serif;
+$light-grey: #f6f6f6;
+$red: #ed553b;
+$yellow: #ffce1a;
+$grey: #6c6c6c;
+$dark-blue: #0d0842;
+
+body {
+  font-family: $main-font;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 120%;
+  background: #fffffe;
+  margin: 0;
+}
+* {
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  box-sizing: border-box;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+[class*="__container"] {
+  max-width: 77rem;
+  margin: 0 auto;
+  @media (max-width: 1080px) {
+    padding: 0 15px;
+  }
+}
+
+.lds-dual-ring {
+  display: block;
+  margin: 3rem auto;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid $yellow;
+  border-color: $yellow transparent $yellow transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.load-button__container {
+  display: flex;
+}
+.load__button {
+  position: relative;
+  border-radius: 0.625rem;
+  border: 1px solid transparent;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.44rem 3.06rem;
+  background-color: #ffce1a;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  margin: 3rem auto;
+  &:hover {
+    background-color: transparent;
+    border: 1px solid $yellow;
+    box-shadow: 0px 0px 0px 0px rgba(254, 175, 56, 0.1),
+      -1px 1px 3px 0px rgba(254, 175, 56, 0.1),
+      -5px 2px 6px 0px rgba(254, 175, 56, 0.09),
+      -12px 5px 8px 0px rgba(254, 175, 56, 0.05),
+      -21px 8px 9px 0px rgba(254, 175, 56, 0.01),
+      -33px 13px 10px 0px rgba(254, 175, 56, 0);
+    backdrop-filter: blur(5px);
+    color: $yellow;
+  }
+}

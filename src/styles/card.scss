@@ -1,0 +1,61 @@
+.book-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.card {
+  flex: 0 0 calc(25% - 1rem);
+  background: $light-grey;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+  &__image {
+    margin-bottom: 1rem;
+    height: 11rem;
+    img {
+      object-fit: contain;
+      object-position: bottom;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+  &__categories {
+    span {
+      text-decoration: underline;
+    }
+  }
+  &__categories,
+  &__authors {
+    span {
+      font-size: 0.85rem;
+    }
+  }
+  &:hover {
+    border-radius: 0.625rem;
+    background: #fff;
+    box-shadow: 0px 0px 0px 0px rgba(13, 8, 66, 0.1),
+      0px 1px 3px 0px rgba(13, 8, 66, 0.1),
+      0px 6px 6px 0px rgba(13, 8, 66, 0.09),
+      0px 13px 8px 0px rgba(13, 8, 66, 0.05),
+      0px 23px 9px 0px rgba(13, 8, 66, 0.01),
+      0px 36px 10px 0px rgba(13, 8, 66, 0);
+    cursor: pointer;
+    .card__title {
+      color: $yellow;
+    }
+  }
+  @media (max-width: 1020px) {
+    flex: 0 0 calc(33.3% - 1rem);
+  }
+  @media (max-width: 768px) {
+    flex: 0 0 calc(50% - 1rem);
+  }
+  @media (max-width: 425px) {
+    flex: 0 0 100%;
+  }
+}
