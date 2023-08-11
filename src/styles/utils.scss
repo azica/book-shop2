@@ -61,14 +61,20 @@
 	top: 12px;
     right: 12px;
     transition: transform .6s ease-in-out;
-    animation: toast-in-right .7s;
-	overflow-y: scroll;
 	width: fit-content;
 	padding: 0.5rem;
-	border: 1px solid #ccc;
 	border-radius: 6px;
+	transform: translateY(-1000px);
+	max-width: 25rem;
+	background-color: $yellow;
+	display: flex;
+    align-items: flex-start;
 	p {
 		display: inline-block;
-		margin-right: 1rem;
+		margin: 0 1rem 0 0;
+		font-size: 0.85rem;
+	}
+	&.active {
+		transform: translateY(0);
 	}
 }

@@ -11,17 +11,16 @@ const Toast = () => {
 		e.preventDefault()
 		setShow(false)
 	}
+	setTimeout(()=>{
+		setShow(false)
+	}, 7000)
     return (
-		<>
-		{errorMessage!="" && show &&
-			<div className="toast">
-				<p className="toast__message">{errorMessage}</p>
-				<button onClick={clickHandler}>
-					X
-				</button>
-			</div>
-		}
-		</>
-    )
+		<div className={`toast ${errorMessage!="" && show ? 'active': '' }`}>
+			<p className="toast__message">{errorMessage}</p>
+			<button onClick={clickHandler}>
+				X
+			</button>
+		</div>
+     )
 }
 export default Toast;
