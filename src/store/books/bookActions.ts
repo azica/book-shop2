@@ -8,7 +8,7 @@ const baseUrl = 'https://www.googleapis.com/books/v1/volumes'
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async function (sort: string, { rejectWithValue }) {
 	try {
 		let order = sort == "newest" ? "&orderBy=newest" : ""
-		const response = await axios.get(`${baseUrl}?q=search-terms${order}${myApi}`);
+		const response = await axios.get(`${baseUrl}?q=sewaaaaaaaaaaawarch-terms${order}${myApi}`);
 		const data = await response.data.items
 
 		const stackArray = data.map((book: any) => {
